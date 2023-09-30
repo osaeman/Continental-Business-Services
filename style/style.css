@@ -1,0 +1,921 @@
+/* For Headings */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* For Main Layout */
+
+/* -----CSS Default Reset----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+:root {
+  --primay-color: #2d207c;
+  --seconday-color: #9ca0a9;
+  --grey-shade-light: #fbfbfb;
+  --grey-shade-dark: #f1f1f1;
+  --third-color: #fbe19f;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ------------Home Page----------- */
+/* ------------Header------------ */
+
+header {
+  border: black;
+  border-width: 2px;
+  box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.06);
+}
+.head_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.logo img {
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu li {
+  display: inline;
+  position: relative;
+}
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primay-color);
+  padding: 10px 8px 10px 8px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.menu ul li::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primay-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.menu ul li:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+  color: var(--primay-color);
+}
+.icon {
+  display: none;
+  color: var(--primay-color);
+  font-weight: 900 !important;
+  font-size: 27px !important;
+  padding: 0;
+  margin: 0;
+}
+
+menu.responsive {
+  position: relative;
+}
+menu.responsive {
+  display: block;
+  text-align: left;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.2s;
+
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.24);
+}
+.sidenav nav {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.sidenav a {
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--primay-color);
+  display: block;
+  transition: 0.3s;
+  position: relative;
+  text-transform: uppercase;
+}
+.sidenav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primay-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.sidenav a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+  color: var(--primay-color);
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Hero-Section */
+.hero-section {
+  width: 100%;
+  height: 130vh;
+  position: relative;
+}
+.hero-section img {
+  width: 100%;
+  height: 130vh;
+  object-fit: cover;
+  object-position: top;
+  position: relative;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  height: 100%;
+}
+.hero-content-container {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -30%);
+  z-index: 5;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  width: 70%;
+  color: white;
+}
+.hero-content span {
+  display: inline-block;
+  background-color: var(--primay-color);
+  padding: 14px 24px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 2.1rem;
+  color: white;
+  font-weight: 600;
+}
+/* Security Cards */
+
+.security-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 30px;
+  margin-top: -300px;
+  z-index: 7;
+  position: relative;
+}
+.what-we-do-section h2 {
+  color: var(--primay-color);
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.what-we-do-section span {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+  margin-bottom: 45px;
+}
+.ag-courses_box {
+  width: 100%;
+}
+
+.ag-courses-item_link {
+  overflow: hidden;
+  border-radius: 28px;
+  display: block;
+  padding: 30px 30px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  box-shadow: 5px 5px 10px #252525;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+
+.ag-courses-item_title {
+  margin: 0 0 25px;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 29px;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_content {
+  font-size: 17px;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_bg {
+  height: 148px;
+  width: 148px;
+  background-color: var(--primay-color);
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Areas Of Services */
+.areas-services-section {
+  width: 100%;
+  background-color: var(--grey-shade-dark);
+  margin: 100px auto;
+  padding: 60px 20px;
+}
+.areas-services-section h2 {
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--primay-color);
+}
+.areas-services-section p {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 16px 0;
+  font-size: 1.6rem;
+  font-family: 800;
+}
+
+/*---- What Can We Do Section---- */
+
+.what-we-can-section h2 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primay-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.what-we-can-section span {
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 500;
+  display: block;
+}
+
+.what-we-can-section .what-we-can-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  margin: 30px 20px;
+}
+
+.what-we-can-section ul {
+  list-style: disc;
+  list-style-position: inside;
+  padding-right: 60px;
+}
+
+.what-we-can-section ul li {
+  text-indent: -25px;
+  margin-left: 27px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+.what-we-can-section ul b {
+  color: var(--primay-color);
+  opacity: 0.9;
+}
+.services-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 30px;
+  margin: 60px 0 80px 0;
+}
+
+.services-card div {
+  background-color: rgba(45, 32, 124, 0.8);
+  border-radius: 6px;
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.24);
+}
+
+.services-card img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 4/4;
+  border-top-left-radius: 80px;
+  transition: all 0.4s ease-in-out;
+}
+.services-card img:hover {
+  border-top-left-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  border-bottom-right-radius: 80px;
+}
+.services-card h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 15px 0;
+  color: white;
+}
+.sectors-section {
+  margin: 120px auto;
+}
+.sectors-section h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primay-color);
+}
+.sections-section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 40px;
+  width: 70%;
+  margin: 0 auto;
+}
+.sections-section-grid div span {
+  background-color: var(--grey-shade-dark);
+  color: black;
+  padding: 10px 15px;
+  display: block;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* -----------Footer------------ */
+footer {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  padding: 40px 0;
+}
+.footer-flexbox-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer-flexbox-top div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 40px;
+  width: 33%;
+}
+
+footer h4 {
+  font-weight: 400 !important;
+  font-size: 2.7rem;
+  margin-bottom: 29px !important;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footer-flexbox-top div i {
+  color: #474747;
+  font-size: 2.3rem;
+  background-color: white;
+  padding: 17px 17px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.footer-flexbox-top h3 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.footer-flexbox-top h3 span {
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-transform: lowercase;
+}
+.footer-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+.footer-links ul li a {
+  padding: 5px 10px;
+  text-decoration: underline;
+  color: var(--seconday-color);
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: var(--grey-shade-light);
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.3rem;
+  background-color: var(--grey-shade-light);
+}
+
+/* ----------Privacy Policy Page------------- */
+.policy-section {
+  margin: 80px auto;
+}
+.policy-section h1 {
+  font-size: 3.4rem;
+  color: var(--primay-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.policy-section h2 {
+  font-size: 2.4rem;
+  color: var(--primay-color);
+  text-transform: uppercase;
+  margin: 20px 0 8px 0;
+}
+.policy-section h3 {
+  font-size: 2rem;
+  color: var(--primay-color);
+  text-transform: uppercase;
+  margin: 25px 0 4px 0;
+}
+.policy-section p {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.policy-section ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 5px;
+}
+.policy-section ul li {
+  text-indent: -23px;
+  margin-left: 28px;
+}
+.policy-section ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-bottom: 5px;
+}
+.policy-section ol li {
+  text-indent: -23px;
+  margin-left: 28px;
+}
+
+/*------------ Contact Us Page----------- */
+
+.contact-us-section-form {
+  width: 65%;
+  padding: 60px;
+  margin: 50px auto;
+  background-color: var(--grey-shade-light);
+  border-radius: 10px;
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.15);
+}
+.contact-us-section-form h2 {
+  font-weight: 400 !important;
+  font-size: 2.4rem;
+  margin-bottom: 22px;
+}
+.contact-us-section-form form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.contact-us-section-form form div > span {
+  display: block;
+  width: 45%;
+}
+
+.contact-us-section-form form label {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 30px 0 10px 0;
+}
+.contact-us-section-form form label span {
+  font-size: 2rem;
+  color: var(--seconday-color);
+}
+.contact-us-section-form form input,
+.contact-us-section-form form textarea {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 5px 10px 5px 0;
+  width: 100%;
+}
+
+.contact-us-section-form form button {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: none;
+  background-color: var(--primay-color);
+  color: #121212;
+  outline: none;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px 0 10px 0;
+  border-radius: 3px;
+  transform: translateX(0);
+  transition: transform 0.4s ease-in;
+  cursor: pointer;
+  color: white;
+  opacity: 0.7;
+}
+.contact-us-section-form form button:hover {
+  transition: all 0.4s ease-in;
+  transform: translateX(20px);
+  opacity: 1;
+}
+
+/*------- About Us Page--------- */
+.about-section {
+  background-color: var(--grey-shade-dark);
+  margin: 100px 0;
+  padding: 70px 0;
+}
+.about-section-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-section-container-left h1 {
+  font-size: 3rem;
+  line-height: 3.6rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.about-section-container-left p {
+  width: 80%;
+  margin-bottom: 30px;
+}
+.about-section-container-right p {
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.our-team {
+  margin: 60px auto;
+}
+
+.our-team h2 {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.our-team-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 50px;
+}
+
+.our-team-card {
+  background-color: var(--grey-shade-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 3px 20px 3px rgba(191, 191, 191, 0.2);
+  padding: 50px 10px;
+}
+
+.our-team-card img {
+  width: 90px;
+}
+
+.our-team-card h4 {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  font-weight: 700;
+  margin: 30px 0 7px 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primay-color);
+}
+
+.our-team-card span {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.continental-benefits-section {
+  margin: 120px 0;
+}
+.continental-benefit-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.continental-benefits-section h2 {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.continental-benefit-left {
+  background-color: var(--grey-shade-light);
+  padding: 60px 6vw;
+  grid-column: 1;
+}
+.continental-business-right {
+  grid-column: 2;
+  background-color: var(--grey-shade-dark);
+  padding: 60px 6vw;
+}
+
+.continental-benefit-left p,
+.continental-business-right p {
+  margin-bottom: 10px;
+}
+
+/* Security Officers Page */
+
+.security-officers-section {
+  margin: 100px auto;
+}
+
+.security-officers-section h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.security-officers-section span {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.security-officers-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 50px 0;
+  grid-column-gap: 50px;
+}
+
+.security-officers-section-flexbox-left h2 {
+  font-size: 2.5rem;
+  line-height: 3.2rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.security-officers-section-flexbox-left ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-right: 6vw;
+}
+
+.security-officers-section-flexbox-left ul li {
+  text-indent: -23px;
+  margin-left: 28px;
+  margin-bottom: 10px;
+}
+
+.security-officers-section-flexbox-right img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  border-top-right-radius: 250px;
+  border-bottom-left-radius: 250px;
+}
+
+/* Our Security Officers Section */
+.our-officers-section {
+  margin: 120px 0;
+}
+
+.our-officers-section h2 {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.our-officers-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.our-officers-section-flexbox-left {
+  background-color: var(--grey-shade-light);
+  padding: 70px 6vw;
+  grid-column: 1;
+}
+
+.our-officers-section-flexbox-left ul,
+.our-officers-section-flexbox-right ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.our-officers-section-flexbox-left ul li,
+.our-officers-section-flexbox-right ul li {
+  text-indent: -23px;
+  margin-left: 28px;
+  margin-bottom: 10px;
+}
+
+.our-officers-section-flexbox-right {
+  grid-column: 2;
+  background-color: var(--grey-shade-dark);
+  padding: 70px 6vw;
+}
+/* Security Devices Section */
+.security-device-section {
+  margin: 120px auto;
+}
+.security-device-section h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.security-device-section span {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.security-device-section-flexbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 80px 0 0 0;
+  grid-column-gap: 70px;
+}
+
+.security-device-section-flexbox-left h2 {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.security-device-section-flexbox-left ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-right: 6vw;
+}
+.security-device-section-flexbox-left ul li {
+  text-indent: -23px;
+  margin-left: 28px;
+  margin-bottom: 10px;
+}
+
+.security-device-section-flexbox-right img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.security-device-section-alarm-flexbox-left img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.security-device-section-flexbox-alarm-right ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-right: 6vw;
+}
+.security-device-section-flexbox-alarm-right ul li {
+  text-indent: -23px;
+  margin-left: 28px;
+  margin-bottom: 10px;
+}
+.security-device-section-flexbox-alarm-right h2 {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  color: var(--primay-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
