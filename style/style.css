@@ -130,7 +130,7 @@ menu.responsive {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -237,9 +237,6 @@ menu.responsive {
 /* Security Cards */
 
 .security-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 30px;
   margin-top: -300px;
   z-index: 7;
   position: relative;
@@ -258,6 +255,21 @@ menu.responsive {
   text-align: center;
   display: block;
   margin-bottom: 45px;
+}
+.security-cards-gird-1 {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-bottom: 30px;
+}
+.security-cards-gird-2 {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
 }
 .ag-courses_box {
   width: 100%;
@@ -506,7 +518,9 @@ footer h4 {
 .footer-links ul li a:hover {
   color: var(--grey-shade-light);
 }
-
+.address {
+  text-transform: uppercase !important;
+}
 .copyright {
   text-align: center;
   padding: 20px;
@@ -539,6 +553,7 @@ footer h4 {
 .policy-section p {
   font-size: 1.7rem;
   margin-bottom: 10px;
+  line-height: 2.5rem;
 }
 .policy-section ul {
   list-style: disc;
@@ -546,8 +561,9 @@ footer h4 {
   margin-bottom: 5px;
 }
 .policy-section ul li {
-  text-indent: -23px;
+  text-indent: -22px;
   margin-left: 28px;
+  margin-bottom: 7px;
 }
 .policy-section ol {
   list-style-type: decimal;
@@ -555,8 +571,9 @@ footer h4 {
   margin-bottom: 5px;
 }
 .policy-section ol li {
-  text-indent: -23px;
+  text-indent: -22px;
   margin-left: 28px;
+  margin-bottom: 7px;
 }
 
 /*------------ Contact Us Page----------- */
@@ -862,6 +879,7 @@ footer h4 {
   display: block;
   text-align: center;
   font-size: 1.8rem;
+  line-height: 2.9rem;
 }
 .security-device-section-flexbox {
   display: grid;

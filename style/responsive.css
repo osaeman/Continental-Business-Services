@@ -20,10 +20,13 @@
   }
 
   .security-cards {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
     margin-top: -50px;
+  }
+  .security-cards-gird-1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .security-cards-gird-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
   .ag-courses-item_link {
     padding: 25px 25px;
@@ -262,16 +265,18 @@
     font-weight: 700;
     font-size: 2.1rem;
   }
-  .security-cards {
+  .security-cards-gird-1 {
     grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+    column-gap: 0;
+  }
+  .security-cards-gird-2 {
+    grid-template-columns: repeat(1, 1fr);
   }
   .ag-courses-item_content {
     font-size: 15px;
   }
   .ag-courses-item_link {
-    padding: 30px 30px 40px 30px;
+    padding: 20px 2px 25px 25px;
     height: max-content;
   }
   .ag-courses-item_bg {
@@ -392,6 +397,7 @@
   }
   .security-device-section span {
     font-size: 1.6rem;
+    line-height: 2.3rem;
   }
   .security-device-section-flexbox-left h2 {
     font-size: 2.1rem;
